@@ -1,38 +1,263 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body{
+  font-family: 'Jost', sans-serif;
+  background-color:rgb(32, 7, 40);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container{
+  width: 80%;
+  margin:auto;
+  margin-top: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.home-wrapper{
+
+}
+
+.header-nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  height: auto;
+
+}
+
+.button-wrapper{
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.btn{
+  padding: 5px 10px;
+  border: none;
+  background-color: rgb(147, 30, 201);
+  border-radius:5px;
+  color: white;
+  font-size: 1rem;
+
+}
+
+.btn:hover{
+  cursor: pointer;
+  background-color: rgb(191, 52, 255);
+}
+
+.search-sec{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.search-sec-int{
+  display: flex;
+  flex-direction: column
+}
+
+.input-box{
+  height: 2rem;
+  width: 15rem;
+  padding: 5px 5px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.notes-grid{
+  margin: 3rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+
+
+.note-container{
+  padding: 10px;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.437);
+}
+
+.note-container > *{
+  text-decoration: none;
+  color: white;
+}
+
+.note-container:hover{
+  background: rgb(170,170,170);
+  background: linear-gradient(286deg, rgba(170, 170, 170, 0.13) 0%, rgba(255, 255, 255, 0.24) 100%);
+  transition: 0.4s;
+  border: 1px solid white;
+
+}
+
+.note-content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.note-title{
+  text-align: center;
+}
+
+
+.note-body{
+  text-align: center;
+
+}
+
+.note-tags > .btn{
+  margin: 0.2rem;
+  padding: 5px 5px;
+  font-size: 0.8rem;
+  background-color: rgb(26, 177, 112);
+}
+
+
+/* FORM */
+
+.form-wrapper{
+  margin: 2rem 0rem;
+  width: 100%;
+}
+
+.title-input-section{
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-body{
+  width: 100%;
+  margin: 2rem 0rem;
+}
+
+.input-body > textarea{ 
+  width: 100%;
+  resize: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.select-box{
+  width: 23rem;
+  height: auto;
+  color: black;
+}
+
+
+.footer{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+/* NOTE PAGE */
+
+.note-page-container{
+  height: 100%;
+}
+
+.note-page-body{
+  margin: 2rem 0;
+}
+
+.note-page-container> .btn{
+  margin: 0.2rem;
+  padding: 5px 5px;
+  font-size: 0.8rem;
+  background-color: rgb(26, 177, 112);
+}
+
+.color-danger{
+  background-color: rgb(215, 48, 48);
+}
+
+.color-danger:hover{
+  background-color: rgb(244, 80, 80);
+}
+
+/* POPUP */
+
+.popup-background{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: end;
+  backdrop-filter: brightness(50%);
+}
+
+.popup-header{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 1rem;
+}
+
+.tags-popup{
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  z-index: 6;
+  top: 2rem;
+  right: 2rem;
+  width: 300px;
+  padding: 20px 8px;
+  border-radius: 10px;
+}
+
+.tag-single-container{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 255, 4, 0.11);
+  padding: 2px 8px;
+  margin: 5px 0px;
+  border-radius: 5px;
+}
+
+.placeholder{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  height: 40vh;
+  align-items: center;
+}
+
+
+
+
+@media (max-width:800px){
+
+  .container{
+    width: 95%;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+  .input-box{
+    width: 10rem;
+}
+
+  .select-box{
+    width: 13rem;
+    
+}
+
+
 }
